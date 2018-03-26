@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>在dom未加载完成时加载js出错</title>
+</head>
+<body>
+	<script type="text/javascript">
+		function init(){
+			let name=document.getElementById("textField");
+			let button=document.getElementById("myButton");
+			button.onclick=function(){
+				let username=name.value;
+				alert(username)
+			}
+		}
+		init();  //这是在dom未加载完就执行了  所以会报错 ，也可以放在dom后面
+		/*document.addEventListener('readystatechange',function(){
+			if (document.readyState==="complete") {
+				init();
+			}
+		})*/
+	</script>
+	<input type="text" name="" id="textField" placeholder="enter your name">
+	<input type="button" name="" id="myButton" value="Go">
+</body>
+</html>

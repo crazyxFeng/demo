@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<script type="text/javascript">
+		
+			function xx(){
+				var Util=(function(){
+					var storageSetter=function(key,val){
+						return localStorage.setItem(key, val)
+					};
+					var storageGetter=function(key){
+						return localStorage.getItem(key)
+					};
+					return {
+						storageSetter,
+						storageGetter
+					}
+				})();
+				if (window.localStorage) {
+					var a=[1,2,3,4,5,6];
+					Util.storageSetter('aa',a);
+					var arr=Util.storageGetter("aa").split(",");
+					console.log(arr instanceof Array);
+					for(var i=0; i< arr.length; i++){
+						console.log(arr[i]);
+					}
+				}else {
+					alert("your browser don't support localStorage")
+				}
+			}
+			xx();
+		</script>
+	</body>
+	</html>

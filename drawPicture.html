@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- 这是一个海报画廊 -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>海报画廊</title>
+<script type="text/javascript" src="img/data.js"></script>
+<style type="text/css">
+	*{
+		padding: 0;
+		margin: 0;
+	}
+	body{
+		background: #fff; /* 白色*/
+		color: #555;
+		font-size: 14px;
+		-webkit-font-smoothing:antialiased; /*字体平滑*/
+	}
+	.wrap{
+		width: 100%;
+		height: 600px;
+		background-color: #333;
+		position: absolute;
+		top: 50%;
+		margin-top: -300px;
+		overflow: hidden;
+		perspective: 800px;		
+	}
+	/*海报样式*/
+	.photo{
+		 width: 260px;
+		 height: 320px;
+		 position: absolute;
+		 z-index: 1;
+	}
+	.photo .side{
+		width: 100%;
+		height: 100%;
+		background: #eee;
+		position: absolute;
+		top: 0;
+		left: 0;
+		padding: 20px;
+		box-sizing: border-box;
+	}
+	.photo .side-front{
+		
+	}
+	.photo .side-front .image{
+		width: 100%;
+		height: 250px;
+		line-height: 250px;
+		overflow: hidden;
+	}
+	.photo .side-front .image img{
+		width: 100%;
+		height: 100%;
+	}
+	.photo .side-front .caption{
+		text-align: center;
+		font-size: 16px;
+		line-height: 50px;
+	}
+	.photo .side-back{
+		
+	}
+	.photo .side-back .desc{
+		color: #666;
+		font-size: 16px;
+		line-height: 1.5em;
+	}
+/*	当前选中的海报样式,让海报水平、垂直居中*/	
+	.photo_center{
+		margin-top: -160px;
+		margin-left: -130px;
+		left: 50%;
+		top: 50%;
+		z-index: 999;
+	}
+	/*负责翻转*/
+	.photo-wrap{
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		transform-style: preserve-3d;
+		/*设置过渡效果*/
+		transition: all 2s;
+	}
+	.photo-wrap .side-front{
+		transform: rotateY(0deg);
+	}
+	.photo-wrap .side-back{
+		transform: rotateY(180deg);
+	}
+	.photo-wrap .side{
+		/*当元素不面向屏幕时就隐藏*/
+		backface-visibility: hidden;
+	}
+	.photo-front .photo-wrap{
+		transform: rotateY(0deg);
+	}
+	.photo-back .photo-wrap{
+		transform: rotateY(180deg);
+	}
+</style>
+<body onselectstart="return false;">
+	<!-- 2.改写视图为模板字符串 -->
+	<div class="wrap" id="wrap">
+		<!-- photo负责平移、翻转 -->
+		<div class="photo photo_center photo-front" onclick="turn(this)" id="photo_{{index}}">
+			<!-- 负责翻转 -->
+			<div class="photo-wrap">
+				<div class="side side-front">
+					<p class="image"><img src='img/{{img}}' alt="图片"></p>
+					<p class="caption">{{caption}}</p>
+				</div>
+					<div class ="side side-back">
+					<p class   ="desc">{{desc}}</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		//5.排序海报
+		function rsort(n){
+			var photo_center=g('#photo_'+n);
+			photo_center.className+='photo_center';
+		}
+
+
+		// 1.翻转控制
+		function turn(elem){
+			var cls=elem.className;
+			if (/photo-front/.test(cls)) {
+				cls=cls.replace(/photo-front/,"photo-back");
+			}else{
+				cls=cls.replace(/photo-back/,"photo-front");
+			}
+			return elem.className=cls;
+		}
+		// 3.通用函数
+		function g(selector){
+			var method=selector.substr(0,1)=='.' ? 'getElementByClassName' : 'getElementById';
+			return document[method](selector.substr(1));
+		}
+		// 4.输出所有的海报
+		var data=data;
+		// data是一个数组
+		function addPhotos(){
+			var template=g('#wrap').innerHTML;
+			var html=[];
+
+			for(s in data){
+				 var _html=template
+				 			.replace('{{index}}',s)
+				 			.replace('{{img}}',data[s].img)
+				 			.replace('{{caption}}',data[s].caption)
+				 			.replace('{{desc}}',data[s].desc);
+				 html.push(_html);
+			}
+			console.log(data[s].img);
+			g('#wrap').innerHTML=html.join('');
+			rsort(1);
+		} 
+		 addPhotos();
+	</script>
+</body>
+</html>

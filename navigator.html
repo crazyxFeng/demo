@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>navigator对象</title>
+</head>
+<body>
+	<script type="text/javascript">
+		function queryNavigator(){
+			var lang=navigator.language,
+				cookie=navigator.cookieEnabled,
+				os=navigator.oscpu,
+				appName=navigator.appName,
+				user=navigator.userAgent,
+				cpu=navigator.platform;
+				console.log(lang+"---"+cookie+"---"+os+"---"+appName+"---"+user+"---"+cpu)
+		}
+		queryNavigator()
+	</script>
+</body>
+</html>

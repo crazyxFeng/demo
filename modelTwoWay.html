@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<div id="app">
+		<input type="text" name="" id="inputText"><br>
+		<p>输入的内容是：<span id="showText"></span></p>
+	</div>
+	<script type="text/javascript">
+		var obj={};
+		Object.defineProperty(obj,'txt',{
+			get:function(){
+				return obj
+			},
+			set:function(value){
+				document.getElementById("inputText").value=value;
+				document.getElementById("showText").innerHTML=value;
+			}
+		})
+		document.addEventListener('keyup',function(e){
+			obj.txt=e.target.value;
+		})
+	</script>
+</body>
+</html>

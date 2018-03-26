@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta content="width=device-width,initial-scale=1.0,user-scalable=no,minimum-scale=1,maximum-scale=1">
+	<title>正则表达式2</title>
+</head>
+<body>
+	<form>
+		<input type="text" name="username" id="username" autocomplete="off">
+		<input type="button" name="submit" onclick="get()" value="提交">
+	</form>
+	<script type="text/javascript">
+		function get(){
+			var string=document.getElementById("username").value;
+			console.log(string);
+			var pattern=/abc/g;
+			var s=string.match(pattern);
+			for (var i = 0; i < s.length; i++) {
+				if (isNaN(s[i])) {
+					alert(s[i]);
+				}else{
+					alert(s[i]);
+				}
+			}
+			console.log(s);
+		}
+	</script>
+</body>
+</html>

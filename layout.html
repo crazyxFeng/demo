@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width,initial-sacle=0.5">
+	<meta charset="utf-8">
+	<title></title>
+	<style type="text/css">
+		.item{
+			width: 24px;
+			height: 24px;
+			border-radius: 50%;
+			background: red;
+		}
+		.item:nth-child(2){
+			align-self: flex-end;
+		}
+		.box{
+			width: 200px;
+			height: 200px;
+			box-sizing: border-box;
+			border: 1px solid black;
+			display: -webkit-flex;
+			display: -moz-flex;
+			display: -ms-flex;
+			display: -o-flex;
+			display: flex;
+			-webkit-flex-direction: column;
+			-moz-flex-direction: column;
+			-ms-flex-direction: column;
+			-o-flex-direction: column;
+			flex-direction: column;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="box">
+		<span class="item"></span>
+		<span class="item"></span>
+	</div>
+</body>
+</html>

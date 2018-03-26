@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+		(function(){
+			var now=new Date();
+			if (now.getMonth()==2 && now.getDate()==23) {
+				console.log("今天是"+(now.getMonth()+1)+"月"+now.getDate()+"日")
+			}
+		})();
+		function add(num1,num2){
+			var sum=num1+num2;
+			return sum
+		}
+		console.log("相加的值是"+add(1,4));
+
+		//利用闭包访问私有变量和函数
+		function myObject(){
+			var privateValue="我是通过闭包访问的数据";
+			function privateFunction(){
+				return "我是通过闭包访问的方法"
+			}
+			this.publicMethod=function(){
+				console.log(privateValue)
+				return privateFunction();
+			}
+		}
+		var obj=new myObject();
+		console.log(obj.publicMethod());
+		//访问静态私有变量
+		(function(){
+			var privateValue="我是静态数据";
+			function privateFunction(){
+				return "我是静态方法"
+			}
+			my=function(){};
+			my.prototype.publicMethod=function(){
+				console.log(privateValue);
+				return privateFunction()
+			}
+		})();
+		var me=new my();
+		console.log(me.publicMethod());
+		
+	</script>
+</body>
+</html>

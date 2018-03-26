@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+</head>
+<body>
+	<canvas id="myCanvas" width="300px" height="300px" style="border: 1px solid red;"></canvas>
+	<canvas id="myCanvas1" width="300px" height="300px" style="border: 1px solid red;"></canvas>
+	<script type="text/javascript">
+		var c=document.getElementById("myCanvas");
+		var context=c.getContext("2d");
+		context.fillStyle="#f0f";
+		context.beginPath();
+		context.arc(150,150,60,0,2*Math.PI,true);
+		context.closePath();
+		context.stroke();
+		context.fill();
+		// 弧线
+		var c1=document.getElementById("myCanvas1");
+		var context1=c1.getContext("2d");
+		context1.strokeStyle="#f0f";
+		for(var i=0;i<20;i++){
+			context1.beginPath();
+			context1.arc(0,300,i*10,0,2*Math.PI,true);
+			context1.closePath();
+			context1.stroke();
+
+		};
+	</script>
+</body>
+</html>

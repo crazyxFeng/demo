@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+		
+		setTimeout(function(){
+			console.log(a);
+		},0);  //第四步
+		var a=10;
+		console.log(b);   //第一步
+		console.log(fn);	//第二步
+		var b=20;
+		function fn(){
+			setTimeout(function(){
+				console.log("setTimeout 10ms");
+			},10)
+		};
+		fn.toString=function(){
+			return 30
+		};
+		console.log(fn);  //第三步
+		setTimeout(function(){
+			console.log('setTimeout 20ms');
+		},20);  //第六步
+		fn();  //第五步
+	</script>
+</body>
+</html>

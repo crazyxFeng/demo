@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<p>p1</p>
+	<p>p2</p>
+	<p>p3</p>
+	<script type="text/javascript">
+		function f(g,name){
+			return function(e){
+				e= e || window.event;
+				return g[name](e,this);
+			}
+		};
+		function g(id){
+			return function(){
+				var tags=document.getElementsByTagName(id);
+				if (tags) {
+					for(var i in tags){
+						tags[i].onclick=f(g,"click");
+						tags[i].onmouseover=f(g,"over");
+						tags[i].onmouseout=f(g,"out");
+					}
+				}
+			}
+		};
+		g.click=function(e,ele){
+			ele.style.backgroundColor='red';
+		};
+		g.over=function(e,ele){
+			ele.style.backgroundColor='green';
+		};
+		g.out=function(e,ele){
+			ele.style.backgroundColor='blue';
+		};
+		window.onload=g("p");
+	</script>
+</body>
+</html>

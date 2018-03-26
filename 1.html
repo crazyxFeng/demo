@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		function cook(){
+			console.log("start cook");
+			var p=new Promise((resolve)=>{
+				console.log("做饭完毕");
+				resolve('蛋炒饭')
+			})
+			return p
+		}
+		function eat(data){
+			console.log("开始吃饭:"+data);
+			var p=new Promise((resolve)=>{
+				console.log("吃饭完毕");
+				resolve("一个碗和一双筷子")
+			})
+			return p
+		}
+		function wash(data){
+			console.log("开始洗碗,洗的是："+data);
+			var p=new Promise((resolve)=>{
+				console.log("洗碗完毕");
+				resolve('休息')
+			})
+			return p
+		}
+		cook().then(eat).then(wash).then((data)=>console.log(data))
+	</script>
+</body>
+</html>

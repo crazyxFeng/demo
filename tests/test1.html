@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">	
+	<meta name="viewport" content="width=device-width,initial-scale=0.5,user-scalable=no">
+	<title>简单的正则表达式</title>
+</head>
+<body>
+<script type="text/javascript">
+	var string="every man in the world,every woman on the earth,123456,,,,..;;;;23#$$$熊峰你好啊";
+	var string2="you are the best hello angular good morning 123";
+	var string3="abc",string4="123";
+	pattern=/\b\w/g;
+	function f(){
+		return arguments[0].toUpperCase();
+	};
+	var s=string2.replace(pattern,f);
+	console.log(s);
+</script>
+</body>
+</html>
