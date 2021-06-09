@@ -1,0 +1,284 @@
+ <div class="container"> 
+    <div class="shape" style="--scale: 0.840;--rotation: 180deg;--color:#f10"></div>
+    <div class="shape" style="--scale: 0.720;--rotation: 360deg;--color:#f26"></div>
+    <div class="shape" style="--scale: 0.605;--rotation: 540deg;--color:#f49"></div>
+    <div class="shape" style="--scale: 0.518;--rotation: 720deg;--color:#ffc"></div>
+    <div class="shape" style="--scale: 0.435;--rotation: 900deg;--color:#920"></div>
+    <div class="shape" style="--scale: 0.373;--rotation: 1080deg;--color:#936"></div>
+    <div class="shape" style="--scale: 0.314;--rotation: 1260deg;--color:#969"></div>
+    <div class="shape" style="--scale: 0.269;--rotation: 1440deg;--color:#993"></div>
+    <div class="shape" style="--scale: 0.226;--rotation: 1620deg;--color:#990"></div>
+    <div class="shape" style="--scale: 0.193;--rotation: 1800deg;--color:#909"></div>
+    <div class="shape" style="--scale: 0.163;--rotation: 1980deg;--color:#f06"></div>
+    <div class="shape" style="--scale: 0.139;--rotation: 2160deg;--color:#a9a9a9"></div>
+    <div class="shape" style="--scale: 0.117;--rotation: 2340deg;--color:#bdb76b"></div>
+    <div class="shape" style="--scale: 0.100;--rotation: 2520deg;--color:#556b2f"></div>
+    <div class="shape" style="--scale: 0.084;--rotation: 2700deg;--color:#ff8c00"></div>
+    <div class="shape" style="--scale: 0.072;--rotation: 2880deg;--color:#e9967a"></div>
+    <div class="shape" style="--scale: 0.061;--rotation: 3060deg;--color:#8fbc8f></div>
+    <div class="shape" style="--scale: 0.052;--rotation: 3240deg;--color:#2f4f4f"></div>
+</div>
+<div class="wrap">
+    <!--部署内外层图片-->
+    <div class="cube">
+        <!--前面图片 -->
+        <div class="out_front">
+            <img src="https://www.cnblogs.com/images/cnblogs_com/php-linux/674292/o_1.jpg" class="pic">
+        </div>
+        <!--后面图片 -->
+        <div class="out_back">
+            <img src="https://www.cnblogs.com/images/cnblogs_com/php-linux/674292/o_2.jpg" class="pic">
+        </div>
+        <!--左面图片 -->
+        <div class="out_left">
+            <img src="https://www.cnblogs.com/images/cnblogs_com/php-linux/674292/o_3.jpg" class="pic">
+        </div>
+        <!--右面图片 -->
+        <div class="out_right">
+            <img src="https://www.cnblogs.com/images/cnblogs_com/php-linux/674292/o_4.jpg" class="pic">
+        </div>
+        <!--上面图片 -->
+        <div class="out_top">
+            <img src="https://www.cnblogs.com/images/cnblogs_com/php-linux/674292/o_5.jpg" class="pic">
+        </div>
+        <!--下面图片 -->
+        <div class="out_bottom">
+            <img src="https://www.cnblogs.com/images/cnblogs_com/php-linux/674292/o_6.jpg" class="pic">
+        </div>
+ 
+        <!--小正方体 -->
+        <span class="in_front">
+                <img src="https://www.cnblogs.com/images/cnblogs_com/php-linux/674292/o_8.jpg" class="in_pic">
+            </span>
+        <span class="in_back">
+                 <img src="https://www.cnblogs.com/images/cnblogs_com/php-linux/674292/o_9.jpg" class="in_pic">
+            </span>
+        <span class="in_left">
+                <img src="https://www.cnblogs.com/images/cnblogs_com/php-linux/674292/o_10.jpg" class="in_pic">
+            </span>
+        <span class="in_right">
+                <img src="https://www.cnblogs.com/images/cnblogs_com/php-linux/674292/o_11.jpg" class="in_pic">
+            </span>
+        <span class="in_top">
+                <img src="https://www.cnblogs.com/images/cnblogs_com/php-linux/674292/o_12.jpg" class="in_pic">
+            </span>
+        <span class="in_bottom">
+                <img src="https://www.cnblogs.com/images/cnblogs_com/php-linux/674292/o_7.jpg" class="in_pic">
+            </span>
+    </div>
+ 
+    <style>
+      .container
+  {
+     float:left;
+     margin: 0;
+     width: 400px;
+     height: 400px;
+     position: relative;
+     overflow: hidden;
+     border: 4px solid rgba(255, 0, 0, 0.9);
+     display: flex;
+     padding: 0;
+     flex: 1;
+     align-items: center;
+     justify-content: center;
+     background:#d8d8d8;
+     border-radius: 10%;
+   } 
+   .shape
+   {
+     position: absolute;
+     width: 80%;
+     height: 80%;
+     top: 50%;
+     left: 50%;
+     opacity: 0.6;
+     border-radius:10%;
+     animation: rotates 5s alternate infinite ease-in-out;
+   }
+   .shape:nth-child(1n+0) 
+   {
+      background: var(--color);
+   }
+   @keyframes rotates 
+   {
+       from { transform: translate(-50%, -50%) rotate(var(--rotation)) scale(var(--scale)); }
+       to   { transform: translate(-50%, -50%) rotate(90deg) scale(var(--scale));  }
+   }
+   .top1{
+      position: absolute;
+      left:399px;
+      top: 10px;
+      writing-mode:tb-rl;
+      height: 163px;
+   }
+   .top2{
+      position: absolute;
+      left:399px;
+      top: 200px;
+      height: 163px;
+      writing-mode:tb-rl
+   }
+   .top3{
+      position: absolute;
+      left:10px;
+      top: 400px;
+   }
+   .top4{
+      position: absolute;
+      left:200px;
+      top: 400px;
+   }
+
+
+        /*最外层容器样式*/
+        .wrap {
+            width: 100px;
+            height: 100px;
+            margin: 150px;
+            position: relative;
+            float: right;
+        }
+ 
+        /*得到立方体效果*/
+        .cube {
+            width: 50px;
+            height: 50px;
+            margin: 0 auto;
+            transform-style: preserve-3d;
+            /*设置动画播放样式:动画对象 播放速度 时间 播放次数*/
+            animation: rotate linear 20s infinite;
+        }
+ 
+        /*动画旋转的方式*/
+        /*得到动画效果*/
+        @-moz-keyframes rotate {                     /*firefox*/
+            from {
+                transform: rotateX(0deg) rotateY(0deg);
+            }
+            to {
+                transform: rotateX(360deg) rotateY(360deg);
+            }
+        }
+        @-webkit-keyframes rotate {                /*sofari chrome*/
+            from {
+                transform: rotateX(0deg) rotateY(0deg);
+            }
+            to {
+                transform: rotateX(360deg) rotateY(360deg);
+            }
+        }
+        @-o-keyframes rotate {                    /*opera*/
+            from {
+                transform: rotateX(0deg) rotateY(0deg);
+            }
+            to {
+                transform: rotateX(360deg) rotateY(360deg);
+            }
+        }
+        /*每张图片的样式*/
+        .cube div {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            opacity: 0.8;
+            /*过渡效果*/
+            transition: all .4s;
+        }
+ 
+        /*定义所有图片样式*/
+        .pic {
+            width: 200px;
+            height: 200px;
+        }
+ 
+        .cube .out_front {
+            transform: rotateY(0deg) translateZ(100px);
+        }
+ 
+        .cube .out_back {
+            transform: translateZ(-100px) rotateY(180deg);
+        }
+ 
+        .cube .out_left {
+            transform: rotateY(-90deg) translateZ(100px);
+        }
+ 
+        .cube .out_right {
+            transform: rotateY(90deg) translateZ(100px);
+        }
+ 
+        .cube .out_top {
+            transform: rotateX(90deg) translateZ(100px);
+        }
+ 
+        .cube .out_bottom {
+            transform: rotateX(-90deg) translateZ(100px);
+        }
+ 
+        /*定义小正方体样式*/
+        .cube span {
+            display: block;
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            top: 50px;
+            left: 50px;
+        }
+ 
+        .cube .in_pic {
+            width: 100px;
+            height: 100px;
+        }
+ 
+        .cube .in_front {
+            transform: rotateY(0deg) translateZ(50px);
+        }
+ 
+        .cube .in_back {
+            transform: translateZ(-50px) rotateY(180deg);
+        }
+ 
+        .cube .in_left {
+            transform: rotateY(-90deg) translateZ(50px);
+        }
+ 
+        .cube .in_right {
+            transform: rotateY(90deg) translateZ(50px);
+        }
+ 
+        .cube .in_top {
+            transform: rotateX(90deg) translateZ(50px);
+        }
+ 
+        .cube .in_bottom {
+            transform: rotateX(-90deg) translateZ(50px);
+        }
+ 
+        /*鼠标移入后样式*/
+        .cube:hover .out_front {
+            transform: rotateY(0deg) translateZ(200px);
+        }
+ 
+        .cube:hover .out_back {
+            transform: translateZ(-200px) rotateY(180deg);
+        }
+ 
+        .cube:hover .out_left {
+            transform: rotateY(-90deg) translateZ(200px);
+        }
+ 
+        .cube:hover .out_right {
+            transform: rotateY(90deg) translateZ(200px);
+        }
+ 
+        .cube:hover .out_top {
+            transform: rotateX(90deg) translateZ(200px);
+        }
+ 
+        .cube:hover .out_bottom {
+            transform: rotateX(-90deg) translateZ(200px);
+        }
+    </style>
+ 
+  </div>
